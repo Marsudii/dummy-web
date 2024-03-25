@@ -58,16 +58,18 @@
         .addEventListener("submit", function (event) {
           event.preventDefault(); // Prevent form submission
 
-          // Get input values
-          var nameValue = document.getElementById("nameInput").value;
-          var emailValue = document.getElementById("emailInput").value;
+          // Get form data
+          var formData = new FormData(event.target);
+          var data = {};
+          formData.forEach(function (value, key) {
+            data[key] = value;
+          });
 
-          // Push values to Google Tag Manager
+          // Push data to Google Tag Manager
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             event: "formSubmission",
-            nameValue: nameValue,
-            emailValue: emailValue,
+            formData: data,
           });
 
           // You can also trigger the form submission after pushing data to GTM if needed
