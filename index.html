@@ -162,7 +162,7 @@
       </div>
       <div class="chat-mail">
         <div class="row">
-          <form id="id_form_submit_notelp_ga4">
+          <form id="id_form_submit_data_ga4">
             <div class="col-md-12">
               <div class="form-group">
                 <input
@@ -350,6 +350,31 @@
           $(".chat-header-option").removeClass("hide");
         });
       });
+    </script>
+
+    <script>
+      document
+        .getElementById("id_form_submit_data_ga4")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Get form data
+          var formData = new FormData(event.target);
+          var data = {};
+          formData.forEach(function (value, key) {
+            data[key] = value;
+          });
+
+          // Push data to Google Tag Manager
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "formSubmissionChatbot",
+            formData: data,
+          });
+
+          // You can also trigger the form submission after pushing data to GTM if needed
+          // event.target.submit();
+        });
     </script>
   </body>
 </html>
