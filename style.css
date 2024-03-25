@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Kaushan+Script&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: "Exo 2", sans-serif;
+    background: #CDD0D5;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.swiper{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.swiper-slide{
+    width: 100vw;
+    height: 100vh;
+    position: relative; 
+    background: #CDD0D5;
+}
+
+.top, .bottom{
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.top .light-blue{
+    height: 70vh;
+    width: 60vw;
+    clip-path: polygon(0 0, 95% 0, 93% 72%, 73% 80%);
+    background: #ff0810;
+    position: absolute;
+    left: 15%;
+}
+
+.top .dark-blue{
+    height: 70vh;
+    width: 60vw;
+    clip-path: polygon(0 0, 75% 0, 57% 65%, 42% 74%);
+    background: #a40202;
+    position: absolute;
+    left: 40%;
+    z-index: -1;
+}
+
+.top .white{
+    height: 70vh;
+    width: 60vw;
+    clip-path: polygon(54% 0, 100% 0, 68% 58%, 43% 65%);
+    background: #fff;
+    position: absolute;
+    left: 40%;
+    z-index: -2;
+}
+
+.bottom .light-blue{
+    height: 50vh;
+    width: 60vw;
+    clip-path: polygon(28% 39%, 54% 24%, 100% 100%, 48% 100%); 
+    background: #0889C3;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+
+.bottom .dark-blue{
+    height: 50vh;
+    width: 60vw;
+    clip-path:  polygon(67% 100%, 100% 100%, 74% 53%, 59% 64%); 
+    background: #0242A4;
+    position: absolute;
+    bottom: 0;
+    left: 22%;
+    z-index: -1;
+}
+
+.bottom .white{
+    height: 50vh;
+    width: 80vw;
+    clip-path:  polygon(20% 64%, 100% 46%, 100% 100%, 6% 100%);
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    z-index: -2;
+}
+
+.swiper-slide img{
+    z-index: 10;
+    position: absolute;
+    left: 33%;
+    top: 120px;
+}
+
+.text{
+    position: absolute;
+    top: 55%;
+    left: 17%;
+}
+
+.text h2{
+    font-size: 50px;
+    line-height: 0.9;
+}
+
+.text p{
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.swiper-pagination-bullet{
+    height: 15px;
+    width: 15px;
+    margin-right: 20px !important;
+    margin-top: 20px !important;
+}
+
+.swiper-pagination-bullet-active{
+    background: #a40207;
+}
+
+.nav{
+    position: fixed;
+    z-index: 100;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    font-size: 24px;
+}
+
+.logo{
+    height: 70px;
+    width: 70px;
+    margin-right: 50px;
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}   
+
+.language{
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    font-size: 15px;
+}
+
+.flag{
+    margin-right: 10px;
+}
+
+.flag img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.video{
+    position: absolute;
+    height: 140px;
+    width: 220px;
+    overflow: hidden;
+    z-index: 10;
+    background: #a40202;
+    top: 25%;
+    left: 17%;
+    border-bottom: 2px solid #000;
+}
+
+.video .light-blue{
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    bottom: -60%;
+    transform: rotate(-10deg);
+    background: #c30808;
+}
+
+.video img{
+    width: 150px;
+    object-fit: contain;
+    margin-top: 20px;
+    margin-left: 50px;
+    position: relative;
+    z-index: 100;
+}
+
+.video i{
+    font-size: 40px;
+    position: absolute;
+    color: #fff;
+    top: 10px;
+    left: 10px;
+}
+
+.img-2{
+    width: 600px;
+    object-fit: contain;
+    top: -200px !important;
+    left: 50% !important;
+}
+
+.img-3{
+    width: 600px;
+    object-fit: contain;
+    top: 120px !important;
+    left: 40% !important;
+}
+
+.social{
+    position: absolute;
+    z-index: 100;
+    bottom: 5%;
+    display: flex;
+    gap: 30px;
+    left: 17%;
+}
+
+.social .circle{
+    color: #000;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
