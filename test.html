@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+      integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chatbot.css" />
+
+    <title>Cafe Racer</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2L1EPYE8ZQ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-2L1EPYE8ZQ");
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T54BCC5M");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T54BCC5M"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <main>
+      <div class="container">
+        <div class="nav">
+          <div class="logo">
+            <img src="images/logo.png" alt="" />
+          </div>
+          <div class="menu"><i class="ri-bar-chart-horizontal-line"></i></div>
+          <div class="language" style="margin-left: auto">
+            <div class="flag">
+              <img src="images/flag.png" alt="" />
+            </div>
+            <div class="selected">ENG</div>
+            <i class="ri-arrow-down-s-fill"></i>
+          </div>
+          <div class="search">
+            <i class="ri-search-line"></i>
+          </div>
+        </div>
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="text">
+                <h2>CAFE</h2>
+                <h2>RACER</h2>
+                <p>MOTORCYCLES</p>
+              </div>
+              <div class="top">
+                <div class="light-blue"></div>
+                <div class="dark-blue"></div>
+                <div class="white"></div>
+              </div>
+              <img src="images/1.png" alt="" />
+              <div class="bottom">
+                <div class="light-blue"></div>
+                <div class="dark-blue"></div>
+                <div class="white"></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text">
+                <h2>CAFE</h2>
+                <h2>RACER</h2>
+                <p>MOTORCYCLES</p>
+              </div>
+              <div class="top">
+                <div class="light-blue"></div>
+                <div class="dark-blue"></div>
+                <div class="white"></div>
+              </div>
+              <img class="img-2" src="images/2.png" alt="" />
+              <div class="bottom">
+                <div class="light-blue"></div>
+                <div class="dark-blue"></div>
+                <div class="white"></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text">
+                <h2>CAFE</h2>
+                <h2>RACER</h2>
+                <p>MOTORCYCLES</p>
+              </div>
+              <div class="top">
+                <div class="light-blue"></div>
+                <div class="dark-blue"></div>
+                <div class="white"></div>
+              </div>
+              <img class="img-3" src="images/3.png" alt="" />
+              <div class="bottom">
+                <div class="light-blue"></div>
+                <div class="dark-blue"></div>
+                <div class="white"></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="social">
+          <a href="" class="circle"> YT </a>
+          <a href="" class="circle"> FB </a>
+          <a href="" class="circle"> TW </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Chat bot UI start -->
+    <div class="chat-screen">
+      <div class="chat-header">
+        <div class="chat-header-title">Chatbot Nawatech</div>
+        <div class="chat-header-option hide">
+          <span class="dropdown custom-dropdown">
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="dropdownMenuLink1"
+              style="will-change: transform"
+            ></div>
+          </span>
+        </div>
+      </div>
+      <div class="chat-mail">
+        <div class="row">
+          <form id="id_form_submit_data_ga4">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input
+                  id="id_username_input"
+                  type="text"
+                  class="form-control"
+                  placeholder="Name"
+                  name="name_username_input"
+                />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input
+                  id="id_no_telp_input"
+                  type="text"
+                  class="form-control"
+                  placeholder="No WhatsApp"
+                  name="name_no_telp_input"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <button
+                class="btn btn-primary btn-rounded btn-block"
+                type="submit"
+              >
+                Start Chat
+              </button>
+            </div>
+          </form>
+          <div class="col-md-12">
+            <div class="powered-by">Powered by nawatech</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-bot-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-message-square animate"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        ></path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-x"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      gsap.from(".top .light-blue", {
+        clipPath: "polygon(0 0, 100% 0, 100% 0%, 73% 0%)",
+        duration: 0.5,
+        y: -200,
+        opacity: 0,
+      });
+      gsap.from(".top .dark-blue", {
+        clipPath: "polygon(0 0, 100% 0, 100% 0%, 42% 0%)",
+        duration: 0.5,
+        y: -200,
+        opacity: 0,
+        delay: 0.2,
+      });
+      gsap.from(".top .white", {
+        clipPath: "polygon(54% 0, 100% 0, 100% 0, 43% 0)",
+        duration: 0.5,
+        y: -200,
+        opacity: 0,
+        delay: 0.4,
+      });
+
+      gsap.from(".bottom .light-blue", {
+        clipPath: "polygon(28% 100%, 100% 100%, 100% 100%, 47% 100%)",
+        duration: 0.5,
+        y: 200,
+        opacity: 0,
+      });
+      gsap.from(".bottom .dark-blue", {
+        clipPath: "polygon(67% 100%, 100% 100%, 100% 100%, 59% 100%)",
+        duration: 0.5,
+        y: 200,
+        opacity: 0,
+        delay: 0.2,
+      });
+      gsap.from(".bottom .white", {
+        clipPath: "polygon(20% 100%, 100% 100%, 100% 100%, 6% 100%)",
+        duration: 0.5,
+        y: 200,
+        opacity: 0,
+        delay: 0.4,
+      });
+      gsap.from(".swiper-slide img", {
+        x: 900,
+        duration: 1,
+        delay: 0.3,
+      });
+      gsap.from(".swiper-slide h2", {
+        y: 100,
+        duration: 0.5,
+        delay: 0.3,
+        opacity: 0,
+        stagger: 0.2,
+      });
+      gsap.from(".swiper-slide p", {
+        y: 100,
+        duration: 0.5,
+        delay: 0.3,
+        opacity: 0,
+      });
+      gsap.from(".video", {
+        x: 100,
+        duration: 0.5,
+        delay: 0.3,
+        opacity: 0,
+      });
+
+      var swiper = new Swiper(".swiper", {
+        direction: "vertical",
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        speed: 1200,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            shadow: true,
+            translate: [0, 0, -1000],
+          },
+          next: {
+            translate: ["100%", 0, 0],
+          },
+        },
+      });
+    </script>
+
+    <script src="jquery.min.js" text="text/javascript"></script>
+
+    <script>
+      $(document).ready(function () {
+        //Toggle fullscreen
+        $(".chat-bot-icon").click(function (e) {
+          $(this).children("img").toggleClass("hide");
+          $(this).children("svg").toggleClass("animate");
+          $(".chat-screen").toggleClass("show-chat");
+        });
+        $(".chat-mail button").click(function () {
+          $(".chat-mail").addClass("hide");
+          $(".chat-body").removeClass("hide");
+          $(".chat-input").removeClass("hide");
+          $(".chat-header-option").removeClass("hide");
+        });
+      });
+    </script>
+  </body>
+</html>
