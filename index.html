@@ -61,6 +61,7 @@
           // Get form data
           var formData = new FormData(event.target);
           var data = {};
+
           formData.forEach(function (value, key) {
             data[key] = value;
           });
@@ -68,7 +69,7 @@
           // Push data to Google Tag Manager
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-            event: "formSubmission",
+            event: "open_chatbot",
             formData: data,
           });
 
