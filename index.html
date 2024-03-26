@@ -67,11 +67,13 @@
           });
 
           // Push data to Google Tag Manager
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: "open_chatbot",
-            formData: data,
-          });
+          // window.dataLayer = window.dataLayer || [];
+          // window.dataLayer.push({
+          //   event: "open_chatbot",
+          //   formData: data,
+          // });
+
+          gtag("event", "open_chatbot", data);
 
           // You can also trigger the form submission after pushing data to GTM if needed
           // event.target.submit();
