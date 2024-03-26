@@ -1,76 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input Value to GTM</title>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/chatbot.css"/>
+  <title>Honda Google Analytic</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3VXLSK7MLS"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-3VXLSK7MLS");
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VXLSK7MLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-3VXLSK7MLS");
+  </script>
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-KHSTN5RL");
-    </script>
-    <!-- End Google Tag Manager -->
-  </head>
-  <body>
-    <form id="id_form_submit_data_ga4">
-      <input
-        type="text"
-        id="phone_number"
-        name="phone_number"
-        placeholder="no_telp"
-      />
-      <button type="submit">Submit</button>
-    </form>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KHSTN5RL");
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
 
-    <script>
-      document
-        .getElementById("id_form_submit_data_ga4")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form submission
+<body>
 
-          // Get form data
-          var formData = new FormData(event.target);
-          var data = {};
+<main>
+  <div class="container">
+    <div class="nav">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150"
+             height="25" fill="none" viewBox="0 0 150 25">
+          <path fill="url(#pattern0)" d="M0 0h150v25H0z"/>
+          <defs>
+            <pattern id="pattern0" width="1" height="1" patternContentUnits="objectBoundingBox">
+              <use xlink:href="#image0" transform="matrix(.00265 0 0 .01587 -.003 0)"/>
+            </pattern>
+            <image xlink:href="data:image/png;base64,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"
+                   id="image0" width="380" height="63"/>
+          </defs>
+        </svg>
+      </div>
+    </div>
 
-          formData.forEach(function (value, key) {
-            data[key] = value;
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="text">
+            <h2>HONDA</h2>
+            <h2>PCX 160</h2>
+            <p>LIMITED EDITION</p>
+          </div>
+          <div class="top">
+            <div class="light-blue"></div>
+            <div class="dark-blue"></div>
+            <div class="white"></div>
+          </div>
+          <img src="images/pcx.png" alt=""/>
+          <div class="bottom">
+            <div class="light-blue"></div>
+            <div class="dark-blue"></div>
+            <div class="white"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="social">
+      <a href="" class="circle"> YT </a>
+      <a href="" class="circle"> FB </a>
+      <a href="" class="circle"> TW </a>
+    </div>
+  </div>
+</main>
+
+<!-- Chat bot UI start -->
+<div class="chat-screen">
+  <div class="chat-header">
+    <div class="chat-header-title">Chat Dengan Amanda</div>
+    <div class="chat-header-option hide">
+          <span class="dropdown custom-dropdown">
+            <div
+                    class="dropdown-menu dropdown-menu-right"
+                    aria-labelledby="dropdownMenuLink1"
+                    style="will-change: transform"
+            ></div>
+          </span>
+    </div>
+  </div>
+  <div class="chat-mail">
+    <div class="row">
+      <form id="id_form_submit_data_ga4">
+        <div class="col-md-12">
+          <div class="form-group">
+            <input
+
+
+                    type="tel"
+                    class="form-control"
+                    placeholder="Telephone Number"
+                    id="phone_number"
+                    name="phone_number"
+                    pattern="[0-9]{10,12}" maxlength="12" minlength="10" required
+
+
+            />
+
+
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <button class="btn btn-primary btn-rounded btn-block" type="submit">
+            Lanjut
+          </button>
+        </div>
+      </form>
+      <div class="col-md-12">
+        <div class="powered-by">Powered by nawatech</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-bot-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square animate">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/gsap.js"></script>
+<script src="js/jquery.min.js" text="text/javascript"></script>
+<script>
+  $(document).ready(function () {
+    //Toggle fullscreen
+    $(".chat-bot-icon").click(function (e) {
+      $(this).children("img").toggleClass("hide");
+      $(this).children("svg").toggleClass("animate");
+      $(".chat-screen").toggleClass("show-chat");
+    });
+    $(".chat-mail button").click(function () {
+      $(".chat-mail").addClass("hide");
+      $(".chat-body").removeClass("hide");
+      $(".chat-input").removeClass("hide");
+      $(".chat-header-option").removeClass("hide");
+    });
+  });
+</script>
+<!-- SEND EVENT TO GOOGLE ANALYTIC -->
+<script>
+  document
+          .getElementById("id_form_submit_data_ga4")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+            // Get form data
+            let formData = new FormData(event.target);
+            let data = {};
+
+            formData.forEach(function (value, key) {
+              data[key] = value;
+            });
+            gtag("event", "open_chatbot", data);
           });
-
-          // Push data to Google Tag Manager
-          // window.dataLayer = window.dataLayer || [];
-          // window.dataLayer.push({
-          //   event: "open_chatbot",
-          //   formData: data,
-          // });
-
-          gtag("event", "open_chatbot", data);
-
-          // You can also trigger the form submission after pushing data to GTM if needed
-          // event.target.submit();
-        });
-    </script>
-  </body>
+</script>
+</body>
 </html>
