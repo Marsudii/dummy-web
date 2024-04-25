@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PG79MCK7');</script>
+  <!-- End Google Tag Manager -->
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat Button Popup</title>
@@ -33,6 +42,11 @@
   </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PG79MCK7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 
   <!-- Chat Button -->
   <button id="chatButton" class="btn btn-primary chat-button">Chatbot</button>
@@ -67,72 +81,7 @@
     });
   </script>
 
-<script>
-  // Self-invoking anonymous function untuk menjalankan kode secara otomatis
-  (function() {
-    // Fungsi untuk melacak pengisian formulir di dalam iframe dan mengirimkan data ke dataLayer
-    function leoMeasureIframeFormSubmitDataLayer() {
-      // Selector untuk mencari iframe di dalam halaman
-      var iframeId = 'iframe-chat-wanda'; // Ganti sesuai dengan selector iframe Anda, misalnya 'iframe#id-of-iframe'
 
-      // Memilih iframe dengan menggunakan selector yang telah ditentukan
-      var iframe = document.getElementById(iframeId)
-
-      // Menambahkan event listener untuk event blur di dalam window
-      window.addEventListener('blur', function() {
-        // Jika konten di dalam iframe telah dimuat sepenuhnya
-        if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
-          // Menangani pengisian formulir di dalam iframe
-          handleFormSubmission();
-        }
-      });
-
-      // Fungsi untuk menangani pengisian formulir di dalam iframe
-      function handleFormSubmission() {
-        // Memilih formulir di dalam iframe
-        var formInsideIframe = iframe.contentDocument.querySelector('form');
-
-        // Menambahkan event listener untuk event submit formulir
-        formInsideIframe.addEventListener('submit', function(event) {
-          var formData = {}; // Objek untuk menyimpan data formulir
-          var formInputs = formInsideIframe.querySelectorAll('input, select, textarea');
-
-          // Mengambil nilai dari setiap input, select, dan textarea di dalam formulir
-          for (var i = 0; i < formInputs.length; i++) {
-            var input = formInputs[i];
-            if (input.type === 'radio') {
-              if (input.checked) {
-                formData[input.name] = input.value;
-              }
-            } else if (input.type === 'checkbox') {
-              if (!formData[input.name]) {
-                formData[input.name] = [];
-              }
-              if (input.checked) {
-                formData[input.name].push(input.value);
-              }
-            } else {
-              formData[input.name] = input.value;
-            }
-          }
-
-          // Mengirimkan data formulir ke dataLayer
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: 'iframe_form_submit',
-            form_location: window.location.href,
-            iframe_id: iframe.getAttribute('id'),
-            iframe_class: iframe.getAttribute('class'),
-            user_inputs: formData
-          });
-        });
-      }
-    }
-
-    // Memanggil fungsi untuk melacak pengisian formulir di dalam iframe
-    leoMeasureIframeFormSubmitDataLayer();
-  })();
-</script>
 
 </body>
 </html>
