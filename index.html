@@ -1,216 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Chat Web</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWWJ9D7M84"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-BWWJ9D7M84');
-    </script>
-
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PG79MCK7');</script>
-  <!-- End Google Tag Manager -->
-
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-    }
-    .container {
-        text-align: center;
-        margin-top: 50px;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Button Popup</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* CSS tambahan sesuai kebutuhan Anda */
     .chat-button {
-        padding: 10px 20px;
-        font-size: 18px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
     }
-    .iframe-chat {
-        display: none;
-        width: 100%;
-        height: 500px;
-        border: none;
-        margin-top: 20px;
+    .modal-dialog-bottom {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
     }
-</style>
+    .modal-content-bottom {
+      height: 70vh; /* Sesuaikan tinggi modal dengan kebutuhan Anda */
+      overflow-y: auto; /* Aktifkan pengguliran jika konten melebihi tinggi modal */
+    }
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PG79MCK7"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-<div class="container">
-  <img src="https://www.wahanahonda.com/assets/frontend/img/logo.png" alt="Logo">
-    <h1>Web Utama </h1>
+  <!-- Chat Button -->
+  <button id="chatButton" class="btn btn-primary chat-button">Chatbot</button>
 
-    <button class="chat-button" onclick="toggleChat()">Chat Now</button>
-    <iframe id="iframe-chat-wanda" class="iframe-chat" src="" style="border: none;" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
-
-   
+  <!-- Chat Popup Modal -->
+  <div class="modal fade" id="chatPopupModal" tabindex="-1" role="dialog" aria-labelledby="chatPopupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-bottom" role="document">
+      <div class="modal-content modal-content-bottom">
+        <div class="modal-header">
+          <h5 class="modal-title" id="chatPopupModalLabel">WEB BASE</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+          <iframe id="iframe-chat-wanda" src="https://dummy-chat-psi.vercel.app" frameborder="0" ></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 
+
+  <!-- Bootstrap JS (jQuery, Popper.js, Bootstrap JS) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Ketika tombol chat diklik, tampilkan modal popup
+    document.getElementById('chatButton').addEventListener('click', function() {
+      $('#chatPopupModal').modal('show');
+    });
+  </script>
+
 <script>
-function toggleChat() {
-    var iframe = document.getElementById("iframe-chat-wanda");
-    var button = document.querySelector('.chat-button');
-    // Toggle iframe visibility
-    if (iframe.style.display === 'none') {
-        iframe.style.display = 'block';
-        iframe.src = 'https://dummy-chat-psi.vercel.app/'; // Set the URL of the chat app here
-        button.textContent = 'Close Chat'; // Change button text
-    } else {
-        iframe.style.display = 'none';
-        iframe.src = ''; // Reset iframe src
-        button.textContent = 'Chat Now'; // Change button text back
-    }
-}
-
-
-
-
-// Self-invoking anonymous function untuk menjalankan kode secara otomatis
-(function() {
+  // Self-invoking anonymous function untuk menjalankan kode secara otomatis
+  (function() {
     // Fungsi untuk melacak pengisian formulir di dalam iframe dan mengirimkan data ke dataLayer
     function leoMeasureIframeFormSubmitDataLayer() {
-        // Selector untuk mencari iframe di dalam halaman
-        var iframeSelector = 'iframe'; // Ganti sesuai dengan selector iframe Anda, misalnya 'iframe#id-of-iframe'
+      // Selector untuk mencari iframe di dalam halaman
+      var iframeId = 'iframe-chat-wanda'; // Ganti sesuai dengan selector iframe Anda, misalnya 'iframe#id-of-iframe'
 
-        // Memilih iframe dengan menggunakan selector yang telah ditentukan
-        var iframe = document.querySelector(iframeSelector);
-        var isFormSubmitted = false; // Menyimpan status apakah formulir sudah disubmit
-        var isInsideIframe = false; // Menyimpan status apakah mouse berada di dalam area iframe
-        var isCodeExecuted = false; // Menyimpan status apakah kode telah dieksekusi
-        var iframeHeight; // Menyimpan ketinggian iframe
+      // Memilih iframe dengan menggunakan selector yang telah ditentukan
+      var iframe = document.getElementById(iframeId)
 
+      // Menambahkan event listener untuk event blur di dalam window
+      window.addEventListener('blur', function() {
+        // Jika konten di dalam iframe telah dimuat sepenuhnya
+        if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+          // Menangani pengisian formulir di dalam iframe
+          handleFormSubmission();
+        }
+      });
 
-        // Observer untuk memantau perubahan di dalam iframe, terutama perubahan ketinggian
-        var observer = new MutationObserver(function (_mutationsList, observer) {
-            // Mendapatkan ketinggian saat ini dari iframe
-            var currentHeight = iframe.offsetHeight;
-            console.log("Iframe height now:"+currentHeight)
-            // Menghitung persentase perubahan ketinggian iframe
-            var iframeHeightChange = Math.abs(((currentHeight - iframeHeight) / iframeHeight) * 100);
+      // Fungsi untuk menangani pengisian formulir di dalam iframe
+      function handleFormSubmission() {
+        // Memilih formulir di dalam iframe
+        var formInsideIframe = iframe.contentDocument.querySelector('form');
 
-            console.log("Iframe height submit:"+iframeHeightChange)
-            // Jika perubahan ketinggian lebih dari 40% dan formulir belum disubmit, maka formulir telah disubmit
-            if (!isFormSubmitted && iframeHeightChange > 40) {
-                observer.disconnect(); // Menghentikan observer agar tidak terus memantau
+        // Menambahkan event listener untuk event submit formulir
+        formInsideIframe.addEventListener('submit', function(event) {
+          var formData = {}; // Objek untuk menyimpan data formulir
+          var formInputs = formInsideIframe.querySelectorAll('input, select, textarea');
 
-                isFormSubmitted = true;
-                // Mengirimkan data formulir ke dataLayer
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    event: 'iframe_form_submit',
-                    form_location: window.location.href,
-                    iframe_id: iframe.getAttribute('id'),
-                    iframe_class: iframe.getAttribute('class')
-                });
-            }
-        });
-
-        // Fungsi untuk menangani event mouseover di dalam iframe
-        function handleMouseOver(event) {
-            // Memeriksa apakah mouse berada di dalam area iframe
-            if (event.target.closest(iframeSelector)) {
-                isInsideIframe = true;
+          // Mengambil nilai dari setiap input, select, dan textarea di dalam formulir
+          for (var i = 0; i < formInputs.length; i++) {
+            var input = formInputs[i];
+            if (input.type === 'radio') {
+              if (input.checked) {
+                formData[input.name] = input.value;
+              }
+            } else if (input.type === 'checkbox') {
+              if (!formData[input.name]) {
+                formData[input.name] = [];
+              }
+              if (input.checked) {
+                formData[input.name].push(input.value);
+              }
             } else {
-                isInsideIframe = false;
+              formData[input.name] = input.value;
             }
-        }
+          }
 
-        // Fungsi untuk menangani pengisian formulir di dalam iframe
-        function handleFormSubmission() {
-            // Memilih formulir di dalam iframe
-            var formInsideIframe = iframe.contentDocument.querySelector('form');
-
-            // Menambahkan event listener untuk event submit formulir
-            formInsideIframe.addEventListener('submit', function (event) {
-                var formData = {}; // Objek untuk menyimpan data formulir
-                var formInputs = formInsideIframe.querySelectorAll('input, select, textarea');
-
-                // Mengambil nilai dari setiap input, select, dan textarea di dalam formulir
-                for (var i = 0; i < formInputs.length; i++) {
-                    var input = formInputs[i];
-                    if (input.type === 'radio') {
-                        if (input.checked) {
-                            formData[input.name] = input.value;
-                        }
-                    } else if (input.type === 'checkbox') {
-                        if (!formData[input.name]) {
-                            formData[input.name] = [];
-                        }
-                        if (input.checked) {
-                            formData[input.name].push(input.value);
-                        }
-                    } else {
-                        formData[input.name] = input.value;
-                    }
-                }
-
-                // Mengirimkan data formulir ke dataLayer
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    event: 'iframe_form_submit',
-                    form_location: window.location.href,
-                    iframe_id: iframe.getAttribute('id'),
-                    iframe_class: iframe.getAttribute('class'),
-                    user_inputs: formData
-                });
-            });
-        }
-
-        // Menambahkan event listener untuk event mouseover di dalam dokumen
-        document.addEventListener('mouseover', handleMouseOver);
-
-        // Menambahkan event listener untuk event blur di dalam window
-        window.addEventListener('blur', function () {
-            // Jika mouse berada di dalam area iframe dan kode belum dieksekusi
-            if (isInsideIframe && !isCodeExecuted) {
-                isCodeExecuted = true; // Mengubah status kode menjadi sudah dieksekusi
-                document.removeEventListener('mouseover', handleMouseOver); // Menghapus event listener mouseover
-
-                // Mengirimkan event 'iframe_form_start' ke dataLayer untuk menandai awal interaksi dengan formulir di dalam iframe
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    event: 'iframe_form_start',
-                    form_location: window.location.href,
-                    iframe_id: iframe.getAttribute('id'),
-                    iframe_class: iframe.getAttribute('class')
-                });
-
-                // Jika konten di dalam iframe telah dimuat sepenuhnya
-                if (iframe.contentDocument) {
-                    handleFormSubmission(); // Menangani pengisian formulir di dalam iframe
-                } else {
-                    iframeHeight = iframe.offsetHeight; // Menyimpan ketinggian iframe saat ini
-                    observer.observe(iframe, { attributes: true, childList: true, subtree: true }); // Memulai observer untuk memantau perubahan di dalam iframe
-                }
-            }
+          // Mengirimkan data formulir ke dataLayer
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'iframe_form_submit',
+            form_location: window.location.href,
+            iframe_id: iframe.getAttribute('id'),
+            iframe_class: iframe.getAttribute('class'),
+            user_inputs: formData
+          });
         });
+      }
     }
 
     // Memanggil fungsi untuk melacak pengisian formulir di dalam iframe
     leoMeasureIframeFormSubmitDataLayer();
-})();
-
+  })();
 </script>
+
 </body>
 </html>
