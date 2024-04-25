@@ -62,12 +62,14 @@
     <h1>Web Utama </h1>
 
     <button class="chat-button" onclick="toggleChat()">Chat Now</button>
-    <iframe class="iframe-chat" src="" frameborder="0" allowfullscreen></iframe>
-</div>
+    <iframe id="iframe-chat-wanda" class="iframe-chat" src="" style="border: none;" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+
+   
+  </div>
 
 <script>
 function toggleChat() {
-    var iframe = document.querySelector('.iframe-chat');
+    var iframe = document.getElementById("iframe-chat-wanda");
     var button = document.querySelector('.chat-button');
     // Toggle iframe visibility
     if (iframe.style.display === 'none') {
