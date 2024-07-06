@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+     <style>
+    /* CSS tambahan sesuai kebutuhan Anda */
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    .modal-dialog-bottom {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+    }
+    .modal-content-bottom {
+      height: 70vh; /* Sesuaikan tinggi modal dengan kebutuhan Anda */
+      overflow-y: auto; /* Aktifkan pengguliran jika konten melebihi tinggi modal */
+    }
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
 
@@ -63,6 +88,34 @@
             <p class="text-gray-600">&copy; 2024 MyBrand. All rights reserved.</p>
         </div>
     </footer>
+
+     <!-- Chat Button -->
+  <button id="chatButton" class="btn btn-primary chat-button">Chatbot</button>
+
+  <!-- Chat Popup Modal -->
+  <div class="modal fade" id="chatPopupModal" tabindex="-1" role="dialog" aria-labelledby="chatPopupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-bottom" role="document">
+      <div class="modal-content modal-content-bottom">
+        <div class="modal-header">
+          <h5 class="modal-title" id="chatPopupModalLabel">WEB BASE</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+          <iframe id="iframe-chat-wanda" src="https://dummy-chat-psi.vercel.app" frameborder="0" ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
 <script src="//code.tidio.co/oxfiaoe1rl6n44qffs4us1dzfrep8u9c.js" async></script>
+      <script>
+    // Ketika tombol chat diklik, tampilkan modal popup
+    document.getElementById('chatButton').addEventListener('click', function() {
+      $('#chatPopupModal').modal('show');
+    });
+  </script>
 </body>
 </html>
